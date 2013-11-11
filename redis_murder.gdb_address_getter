@@ -1,0 +1,6 @@
+set width 0
+set height 0
+set complaints 0
+set verbose off
+p &server
+detach

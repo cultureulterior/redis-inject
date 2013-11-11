@@ -10,7 +10,7 @@ if [[ $(uname) -eq  "Darwin" ]]
    then
    gcc -Wall -DADDRESS=$ADDRESS -I$PWD/redis/src -bundle -bundle_loader /usr/local/bin/redis-server -o redis_murder_$DATE redis_murder.c
 else
-   gcc  -Wall -DDATE=$DATE -I$PWD/redis/src -c redis_murder.c -o redis_murder_$DATE
+   gcc  -Wall -DADDRESS=$ADDRESS -I$PWD/redis/src -c redis_murder.c -o redis_murder_$DATE
 fi
 printf "p (void *) dlopen(\"$PWD/redis_murder_$DATE\",2) \n detach" > redis_murder.gdb_tmp
 echo "Injecting Code"

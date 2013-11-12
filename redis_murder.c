@@ -5,7 +5,7 @@ void inject_init(void)
 {
   struct redisServer *murder_server = (void *) ADDRESS ;
   printf("Injection successful!\n");
-  printf("Injected into Redis: Address: %lx\n", murder_server);
+  printf("Injected into Redis: Address: %lx\n", (uintptr_t) murder_server);
   printf("Injected into Redis: Port: %i\n", (*murder_server).port);
   dictIterator *di;
   dictEntry *de;

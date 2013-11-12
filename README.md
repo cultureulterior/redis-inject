@@ -3,6 +3,17 @@ redis-inject
 
 Inject C code and access redisServer object from running redis instance via GDB
 
+# How does this work?
+
+We retrieve the address of the main object symbol from redis via gdb. 
+We then compile a binary which refers to symbols, but is not linked to, the original redis-server binary.
+We then connect to the running binary via gdb again, and dlopen() the binary, 
+which contains a constructor-tagged (using  `__attribute__((constructor))` ) function, and is so called immediately
+
+# Why?
+
+We needed access to 
+
 Run as `bash redis_murder.sh`
 
 Example run

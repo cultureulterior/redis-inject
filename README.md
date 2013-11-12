@@ -14,9 +14,12 @@ which contains a constructor-tagged (using  `__attribute__((constructor))` ) fun
 
 We needed access to pubsub channel information, and we weren't running 2.8
 
-Run as `bash redis_murder.sh`
+### How to run
 
-Example run
+`bash redis_murder.sh`
+
+### Example run
+
 ```
 $ bash redis_murder.sh
 ### Retrieving redis '2.4.16'
